@@ -188,5 +188,12 @@ async def main():
             tasks.append(run_bot(token, i))
     await asyncio.gather(*tasks)
 
+from threading import Thread
+
+def keep_alive():
+    app.run(host='0.0.0.0', port=8080)
+
 if __name__ == "__main__":
+    t = Thread(target=keep_alive)
+    t.start()
     asyncio.run(main())
