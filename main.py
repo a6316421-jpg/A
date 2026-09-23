@@ -191,7 +191,7 @@ async def main():
 from threading import Thread
 
 def keep_alive():
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=10000)
 
 if __name__ == "__main__":
     t = Thread(target=keep_alive)
